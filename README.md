@@ -1,9 +1,11 @@
 # GraphqlProject
+A project to learn the setup of a GraphQL Project with an admin panel.
 
+## Getting Started
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
+  * Create and migrate your database with `mix ecto.setup`
   * Install Node.js dependencies with `npm install`
   * Start Phoenix endpoint with `mix phoenix.server`
 
