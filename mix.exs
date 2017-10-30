@@ -18,8 +18,19 @@ defmodule GraphqlProject.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {GraphqlProject, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :ex_machina, :faker]]
+     applications: [
+      :phoenix,
+      :phoenix_pubsub,
+      :phoenix_html,
+      :cowboy,
+      :logger,
+      :gettext,
+      :phoenix_ecto,
+      :postgrex,
+      :ex_machina,
+      :faker,
+      :torch
+    ]]
   end
 
   # Specifies which paths to compile per environment.
@@ -38,12 +49,19 @@ defmodule GraphqlProject.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
+
+     # GraphQL
      {:absinthe, "~> 1.3.0"},
      {:absinthe_plug, "~> 1.1"},
      {:absinthe_ecto, git: "https://github.com/absinthe-graphql/absinthe_ecto.git"},
      {:poison, "~> 2.2.0"},
+
+     # Seeding
      {:faker, "~> 0.7"},
-     {:ex_machina, "~> 2.1"}]
+     {:ex_machina, "~> 2.1"},
+    
+    # Admin
+    {:torch, "~> 1.0.0-rc.6"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
