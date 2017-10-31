@@ -11,6 +11,7 @@ defmodule Seed do
   def seed_database(num_users, num_posts_per_user) do
     num_users
     |> build_users
+    |> Enum.map(&Repo.insert!/1)
     |> Enum.flat_map(fn user -> build_posts_for_user(user, num_posts_per_user) end)
     |> Enum.map(&Repo.insert!/1)
   end
