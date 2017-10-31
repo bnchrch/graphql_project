@@ -25,6 +25,10 @@ defmodule GraphqlProject.Router do
   forward "/graphiql", Absinthe.Plug.GraphiQL,
     schema: GraphqlProject.Schema
 
+  scope "/admin", GraphqlProject.Admin, as: :admin do
+    pipe_through :browser
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", GraphqlProject do
   #   pipe_through :api
