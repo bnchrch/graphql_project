@@ -27,6 +27,9 @@ defmodule GraphqlProject.Router do
 
   scope "/admin", GraphqlProject.Admin, as: :admin do
     pipe_through :browser
+
+    resources "/posts", PostController
+    resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.
